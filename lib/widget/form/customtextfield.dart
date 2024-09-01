@@ -26,19 +26,19 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     // Define common border styles
     final border = OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(5)),
+      borderRadius: const BorderRadius.all(Radius.circular(5)),
       borderSide: BorderSide(color: borderColor, width: 0.8),
     );
 
     final focusBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(10)),
+      borderRadius: const BorderRadius.all(Radius.circular(10)),
       borderSide: BorderSide(
         color: borderColor,
         style: BorderStyle.solid,
         width: 1,
       ),
     );
-    final errorBorder = OutlineInputBorder(
+    const errorBorder = OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(5)),
       borderSide: BorderSide(color: Colors.red, width: 1.2),
     );
@@ -58,7 +58,7 @@ class CustomTextField extends StatelessWidget {
         ),
         prefixIcon: Icon(prefixIcon, color: prefixIconColor),
         errorText: errorText,
-        errorStyle: TextStyle(
+        errorStyle: const TextStyle(
           color: Colors.red,
           fontWeight: FontWeight.w400,
         ),

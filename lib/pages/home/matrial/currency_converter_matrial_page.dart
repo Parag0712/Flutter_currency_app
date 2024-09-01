@@ -1,3 +1,5 @@
+// ignore_for_file: no_logic_in_create_state
+
 import 'package:flutte_first_app/pages/home/appbar/appbar.dart';
 import 'package:flutte_first_app/pages/home/body/body.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +67,7 @@ class _CurrencyConverterMatrialPageState
     // final theme = Theme.of(context);
     // RETURN SCAFFOLD
     return Scaffold(
-      backgroundColor: Color(0xFFFFDAD6),
+      backgroundColor: const Color(0xFFFFDAD6),
       appBar: App_bar(),
       body: Body(
         showError: _showError,

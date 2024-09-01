@@ -1,4 +1,4 @@
-import 'package:flutte_first_app/components/form/customtextfield.dart';
+import 'package:flutte_first_app/widget/form/customtextfield.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +8,7 @@ class Body extends StatelessWidget {
   final VoidCallback onConvert;
   final bool showError;
 
-  Body({
+   const Body({
     super.key,
     required this.showError,
     required this.amountController,
@@ -16,6 +16,7 @@ class Body extends StatelessWidget {
     required this.onConvert,
   });
 
+  @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
@@ -23,7 +24,7 @@ class Body extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
               "${amountController.text.isEmpty ? '0' : amountController.text} USD to ${convertedAmount == 0 ? '0' : convertedAmount.toStringAsFixed(2)} INR",
               style: TextStyle(
@@ -31,13 +32,13 @@ class Body extends StatelessWidget {
                     FontStyle.normal, // Use normal font style for clarity
                 fontWeight: FontWeight.bold, // Bold text for emphasis
                 fontSize: 24, // Font size for prominence
-                color: Color(0xFF3E001D), // Text color
+                color: const Color(0xFF3E001D), // Text color
                 fontFamily: "Raleway", // Font family
                 shadows: [
                   Shadow(
                     color: Colors.black
                         .withOpacity(0.3), // Subtle shadow for depth
-                    offset: Offset(2.0, 2.0), // Offset for shadow effect
+                    offset: const Offset(2.0, 2.0), // Offset for shadow effect
                     blurRadius:
                         6.0, // Increased blur radius for a softer shadow
                   ),
@@ -47,13 +48,13 @@ class Body extends StatelessWidget {
           ),
           // padding and conatinaer
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
             child: CustomTextField(
-              borderColor: Color(0xFF3E001D),
+              borderColor: const Color(0xFF3E001D),
               prefixIcon: Icons.monetization_on,
-              prefixIconColor: Color(0xFF3E001D),
-              key: Key("Amount"),
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              prefixIconColor: const Color(0xFF3E001D),
+              key: const Key("Amount"),
+              keyboardType: const TextInputType.numberWithOptions(decimal: true),
               labelText: 'Please Enter the amount in USD',
               controller: amountController,
               errorText: showError ? 'Please enter an amount' : null,
@@ -74,7 +75,7 @@ class Body extends StatelessWidget {
                 // Respond to button press
               },
               style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50),
                   elevation: 15,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
